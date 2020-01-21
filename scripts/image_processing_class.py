@@ -1,4 +1,4 @@
-from PIL import Image
+from cv2 import imread, cvtColor, COLOR_BGR2RGB
 import numpy as np
 from skimage.color import rgb2hsv
 from skimage import data
@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 
 class image_data:
     def __init__(self, file_name=None):
-        #self.rgb_img = np.ndarray(Image.open(f'../sample_images/{file_name}'))
-        self.rgb_img = data.coffee()
+        self.rgb_img = cvtColor(imread(f'../sample_images/{file_name}'), COLOR_BGR2RGB)
+        # self.rgb_img = data.coffee()
         self.hsv_img = rgb2hsv(self.rgb_img)
         self.hue_img = self.hsv_img[:, :, 0]
         self.value_img = self.hsv_img[:, :, 2]
