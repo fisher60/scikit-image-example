@@ -4,7 +4,7 @@ from skimage.color import rgb2hsv
 from skimage import data
 import matplotlib.pyplot as plt
 
-class image_data:
+class Image_data:
     def __init__(self, file_name=None):
         self.rgb_img = cvtColor(imread(f'../sample_images/{file_name}'), COLOR_BGR2RGB)
         # self.rgb_img = data.coffee()
